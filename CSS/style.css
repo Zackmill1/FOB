@@ -1,0 +1,735 @@
+body {
+    background-color: black; 
+    margin: 0;
+    padding: 0;
+}
+
+.timeline{
+    position: relative;
+    margin: 50px auto;
+    padding: 40px 0;
+    width: 1000px;
+}
+
+.timeline:before{
+    content:'';
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: #c5c5c5;
+}
+
+.timeline ul{
+    margin: 0;
+    padding: 0;
+}
+.timeline ul li{
+    list-style: none;
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+.timeline ul li:nth-child(odd)
+{
+    float: left;
+    text-align: right;
+    clear: both;
+}
+
+.timeline ul li:nth-child(even)
+{
+    float: right;
+    text-align: left;
+    clear: both;
+}
+
+.content{
+    padding-bottom: 20px;
+}
+
+.timeline ul li:nth-child(odd):before
+{
+    content:'';
+    position: absolute;
+    top: 24px;
+    right: -6px;
+    width: 10px;
+    height: 10px;
+    background: purple;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px purple;
+}
+
+.timeline ul li:nth-child(even):before
+{
+    content:'';
+    position: absolute;
+    top: 24px;
+    left: -4px;
+    width: 10px;
+    height: 10px;
+    background: purple;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px purple;
+}
+
+.timeline ul li h3{
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    color: purple;
+}
+
+.timeline ul li p{
+    margin: 10px 0 0;
+    padding: 0;
+}
+.timeline ul li .time h4
+{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+
+.timeline ul li:nth-child(odd) .time
+{
+    position: absolute;
+    top: 12px;
+    right: -165px;
+    margin: 0;
+    padding: 8px 16px;
+    background: purple;
+    border-radius: 18px;
+}
+
+.timeline ul li:nth-child(even) .time
+{
+    position: absolute;
+    top: 12px;
+    left: -165px;
+    margin: 0;
+    padding: 8px 16px;
+    background: purple;
+    border-radius: 18px;
+}
+
+h5{
+    color: purple;
+    text-align: center;
+    font-size: 60px
+}
+    
+    
+
+.container{
+    width: 1080px;
+    margin: 0 auto;
+    
+}
+/*--navbar----------------------------*/
+.navbar {
+    
+    display: flex;
+    padding: 16px;
+    font-family: sans-serif;
+    color: white;
+    position: relative;
+    width: 1080px;
+    top: 0;
+}
+
+.navbar_items,
+  .navbar {
+    flex-direction: column;
+  }
+.navbar a {
+    color: white;
+    font-size: 1.2em; 
+    text-decoration: none;
+}
+.navbar a:hover {
+    color: gray;
+}
+.navbar_link-brand {
+    font-size: 16px;
+}
+.navbar_link {
+    padding: 8px 20px;
+}
+.navbar .active {
+    color: aqua;
+}
+.navbar_items {
+    font-size: 16px;
+    display:none;
+}
+.navbar_items-right {
+    margin-left:0;
+}
+.navbar_link-toggle {
+    display: none;
+    font-size: 1.4em;
+    color: magenta;
+}
+.navbar_toggleShow {
+    display: flex;
+  }
+.navbar_link-toggle {
+    right: 10%;
+    align-self: flex-end;
+    display: initial;
+    position: absolute;
+    cursor: pointer;
+} 
+.nav_img {
+    width: 100px;
+}
+
+/*--navbar----------------------------*/
+
+.fall_background_img{
+    
+    height: auto;
+    width: 100%;
+    z-index: -1;
+    
+}
+.grid-container {
+    margin-top: 100px;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    background-color: black; 
+    padding: 20px; 
+}
+
+.grid-container > div{
+    background-color: black;
+}
+
+.grid-container {
+    margin-top: 100px;
+}
+
+.wrapper {
+    width: 1080px;
+    margin: 0 auto;
+    margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  background-color: black; 
+  text-align: center;
+    
+}
+
+.wide_img {
+    grid-column: 1/-1;
+    
+}
+
+img {
+    width: 100%;
+}
+
+p{
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 20px;
+    color: white;
+}
+
+p2{
+    text-align: right;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 20px;
+}
+
+.bio_title {
+    grid-column: 1/2;
+    font-size: 50px;
+    bottom: 12px;
+    color: white;
+}
+
+.bio_text {
+    grid-column: 2/4;
+}
+.one{
+    grid-column: 1/2; 
+}
+.two {
+    grid-column: 2/3; 
+}
+.three{
+    grid-column: 3/4; 
+}
+
+.four{
+    grid-column: 4/5;
+}
+
+body {
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: 300;
+}
+
+/* first image slider - start 
+derived from https://codepen.io/anon/pen/yzPNXr */ 
+
+@keyframes slidy {
+0% { left: 0%; }
+12% { left: -100%; }
+24% { left: -200%; }
+36% { left: -300%; }
+48% { left: -400%; }
+60% { left: -300%; }
+72% { left: -200%; }
+84% { left: -100%; }
+96% { left: 0%; }   
+}
+
+* {
+  box-sizing: border-box;
+}
+figure { 
+    margin: 0; 
+    background: #101010;
+    font-family: Istok Web, sans-serif;
+    font-weight: 100;
+}
+div#captioned-gallery { 
+    width: 940px; 
+    overflow: hidden; 
+}
+figure.slider { 
+    position: relative; 
+    width: 500%;
+    font-size: 0; 
+    animation: 40s slidy infinite; 
+}
+figure.slider figure { 
+    width: 20%; 
+    height: auto;
+    display: inline-block;  
+    position: inherit; 
+}
+figure.slider img { 
+    width: 100%; 
+    height: auto; 
+}
+
+figure.slider figure figcaption { 
+    position: absolute; 
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+    color: #fff; 
+    width: 100%;
+    font-size: 15px;
+    padding: 10px; 
+}
+
+
+/* first image slider - end */
+
+/*-----------------------------------------*/
+
+/* second image slider - https://codepen.io/valaxin/pen/jmEBL */ 
+
+#slider-wrapper {
+  width: 940px;
+  height: 470px;
+  margin: 50px auto;
+  position: relative;
+  margin-bottom: 0px;
+  overflow: hidden;
+}
+.btn-2nd {
+  background: magenta;
+  padding: 2px;
+  position: absolute;
+  left: 50%;    
+  bottom: 25px;   
+  width: 40px;
+  opacity: 0.3;
+  cursor: pointer;
+  z-index: 999;
+}
+.btn-2nd:hover{
+  opacity: .50;
+    transform:scaleY(2.0);
+  
+}
+#s1 {
+  margin-left: -120px;
+}
+#s2 {
+  margin-left: -60px;
+}
+#s3 {
+  margin-left: 0px;
+}
+#s4 {
+  margin-left: 60px;
+}
+#s5 {
+  margin-left: 120px;
+}
+
+.inner-wrapper {
+  width: 940px;
+  height: 430px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-bottom: 0px;
+  overflow: hidden;
+}
+.control {
+  display: none;
+}
+
+#Slide1:checked ~ .overflow-wrapper {
+  margin-left: 0%;
+}
+
+#Slide2:checked ~ .overflow-wrapper {
+  margin-left: -100%;
+}
+
+#Slide3:checked ~ .overflow-wrapper {
+  margin-left: -200%;
+}
+
+#Slide4:checked ~ .overflow-wrapper {
+  margin-left: -300%;
+}
+
+#Slide5:checked ~ .overflow-wrapper {
+  margin-left: -400%;
+}
+
+#Slide1:checked + #s1 {
+  opacity: 1;
+}
+
+#Slide2:checked + #s2 {
+  opacity: 1;
+}
+
+#Slide3:checked + #s3 {
+  opacity: 1;
+}
+
+#Slide4:checked + #s4 {
+  opacity: 1;
+}
+
+#Slide5:checked + #s5 {
+  opacity: 1;
+}
+
+.overflow-wrapper {
+  width: 500%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-y: hidden;
+  z-index: 1;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.slide0-2nd {
+  width: 20%;
+  float: left;
+}
+
+
+/* second image slider - end */
+
+/*-----------------------------------------*/
+
+/* third image slider - start */
+
+/* derived from
+https://codepen.io/AMKohn/pen/EKJHf*/
+
+.slides {
+    padding: 0;
+    width: 940px;
+    height: 420px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 940px;
+    height: 420px;
+    display: block;
+    position: absolute;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 500px;
+    height: 500px;
+    position: relative; 
+    
+}
+
+.nav label {
+    width: 200px;
+    height: 100%;
+    display: none;
+    position: absolute;
+
+	  opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+
+    transition: opacity .2s;
+
+    color: #FFF;
+    font-size: 156pt;
+    text-align: center;
+    line-height: 380px;
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover + .nav label { opacity: 0.5; }
+
+.nav label:hover { opacity: 1; }
+
+.nav .next { right: 0; }
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+	width: 100%;
+	bottom: 9px;
+	height: 11px;
+	display: block;
+	position: absolute;
+	text-align: center;
+}
+
+.nav-dots .nav-dot {
+	top: -5px;
+	width: 11px;
+	height: 11px;
+	margin: 0 4px;
+	position: relative;
+	border-radius: 100%;
+	display: inline-block;
+	background-color: black;
+}
+
+.nav-dots .nav-dot:hover {
+	cursor: pointer;
+	background-color: pink;
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+	background: purple;
+}
+
+/* third image slider - end */
+
+/*-----------------------------------------*/
+
+/* forth image slider - start */
+
+/* derived from
+http://thecodeplayer.com/walkthrough/css3-image-slider-with-stylized-thumbnails*/
+
+/*Time for the CSS*/
+
+.slider4{
+	width: 940px; /*Same as width of the large image*/
+	position: relative;
+	/*Instead of height we will use padding*/
+	padding-top: 400px; /*That helps bring the labels down*/
+	
+	margin: 20px auto;
+	
+	/*Lets add a shadow*/
+	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
+}
+
+
+/*Last thing remaining is to add transitions*/
+.slider4>img{
+    width: 500px;
+    height: 500px;
+	position: absolute;
+	left: 0; top: 0;
+	transition: all 0.5s;
+}
+
+.slider4 input[name='slide_switch'] {
+	display: none;
+}
+
+.slider4 label {
+	/*Lets add some spacing for the thumbnails*/
+    margin-top: 30px;
+    margin-left: 14px;
+    margin-right: 14px;
+    
+	border: 3px solid #999;
+	
+	float: left;
+	cursor: pointer;
+	transition: all 0.5s;
+	
+	/*Default style = low opacity*/
+	opacity: 0.6;
+}
+
+.slider4 label img{
+	display: block;
+}
+
+/*Time to add the click effects*/
+.slider4 input[name='slide_switch']:checked+label {
+	border-color: #666;
+	opacity: 1;
+}
+/*Clicking any thumbnail now should change its opacity(style)*/
+/*Time to work on the main images*/
+.slider4 input[name='slide_switch'] ~ img {
+	opacity: 0;
+	transform: scale(1.1);
+}
+/*That hides all main images at a 110% size
+On click the images will be displayed at normal size to complete the effect
+*/
+.slider4 input[name='slide_switch']:checked+label+img {
+	opacity: 1;
+	transform: scale(1);
+}
+/*Clicking on any thumbnail now should activate the image related to it*/
+
+
+/* forth image slider - end */
+
+/*-----------------------------------------*/
+
+
+
+.bar { /* the black bar */
+    width: 100%;
+    height: 20px;
+    background-color: black;
+}
+
+hr {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+                                      
+.clearfix {
+    clear: both; 
+    /* clear: both; No floating elements allowed on either the left or the right side */
+}
+
+h2 {
+    font-size: 2em;   
+    font-weight: 600;
+    font-style: italic;
+    color: darkgrey;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    text-align: center;    
+}
+
+h3{
+    color: white;
+}
+
+h4{
+    color: white;
+}
+
+h5{
+    color: purple;
+}
+
+footer {
+    width: 1080px;
+    height: 80px;
+    margin-top: 100px;
+    background-color: black;
+}
+
+.footer_text {
+    font-size: 0.8em;
+    color: purple;
+    text-align: center;
+    
+    /* this three lines will make the text aligh center vertically */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.footer_text a {
+    text-decoration: none;
+    color: yellow;
+    padding-left: 20px;
+}
+
+.clearfix {
+    clear: both;
+}
+
+/* start of timeline code*/
+
+.body_2{
+    margin: 0;
+    padding: 0;
+}
+
+.timeline{
+    position: relative;
+    margin: 50px auto;
+    width: 1000px;
+}
